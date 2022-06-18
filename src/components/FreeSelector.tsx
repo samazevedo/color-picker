@@ -1,21 +1,25 @@
-import { FreeSelector } from './FreeSelector.styled'
+import { FreeSelectorStyled } from './FreeSelector.styled'
 import React, { MouseEventHandler } from 'react'
-import { Color } from '../../Interfaces/Color'
+import { Color } from '../Interfaces/Color'
 
 interface FreeSelectorProps {
     parsedColor: Color
-    color: string // convert to HSV
     satCoords: Array<number> // [x,y] coordinates of the saturation circle
     hueCoords: number
     onSaturationChange: MouseEventHandler<HTMLDivElement>
     onHueChange: MouseEventHandler
 }
 
-export const FreeSelectorProps = (props: FreeSelectorProps) => {
-    const { color, satCoords, hueCoords, onSaturationChange, onHueChange } =
-        props
+export const FreeSelector = (props: FreeSelectorProps) => {
+    const {
+        parsedColor,
+        satCoords,
+        hueCoords,
+        onSaturationChange,
+        onHueChange,
+    } = props
     return (
-        <FreeSelector>
+        <FreeSelectorStyled>
             <section className='cp-free-root'>
                 <article
                     className='cp-saturation'
@@ -43,6 +47,6 @@ export const FreeSelectorProps = (props: FreeSelectorProps) => {
                     />
                 </article>
             </section>
-        </FreeSelector>
+        </FreeSelectorStyled>
     )
 }

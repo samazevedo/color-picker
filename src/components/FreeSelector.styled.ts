@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const FreeSelector = styled.main`
+export const FreeSelectorStyled = styled.main`
     & .cp-saturation {
         width: 100%;
         height: 150px;
@@ -59,27 +59,18 @@ export const FreeSelector = styled.main`
     & .cp-hue {
         width: 100%;
         height: 12px;
-        background-image: linear-gradient() (
-          to right, 
-          #ff0000
-          #ffff00
-          #00ff00
-          #00ffff
-          #0000ff
-          #ff00ff
-          #ff0000
-          );
-          border-radius: 999px;
-          position: relative;
-          cursor: crosshair;
-        }
-        & .cp-hue-indicator {
-          width: 15px;
-          height: 15px;
-          border: 2px solid #ffffff;
-          border-radius: 50%;
-          transform: translate() (-7.5px, -7.5px);
-          position: absolute;
-        }
+        background-image: linear-gradient()
+            (to right, #ff0000 #ffff00 #00ff00 #00ffff #0000ff #ff00ff #ff0000);
+        border-radius: 999px;
+        position: relative;
+        cursor: crosshair;
+    }
+    & .cp-hue-indicator {
+        width: 15px;
+        height: 15px;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        transform: translate() (-7.5px, -7.5px);
+        position: absolute;
     }
 `

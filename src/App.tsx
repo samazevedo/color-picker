@@ -1,9 +1,26 @@
-export const App = () => {
+import { ColorPicker, ColorPickerVariant } from './components/ColorPicker'
+import { useCallback, useState } from 'react'
+
+export default function App() {
+    const [color, setColor] = useState('#ffffff')
+
+    const handleChange = useCallback((color: string) => {
+        setColor(color)
+    }, [])
+
     return (
-        <div>
-            <h1>Hello World</h1>
-        </div>
+        <>
+            <ColorPicker
+                color={color}
+                onChange={handleChange}
+                variant={ColorPickerVariant.Predefined}
+            />
+
+            <ColorPicker
+                color={color}
+                onChange={handleChange}
+                variant={ColorPickerVariant.Free}
+            />
+        </>
     )
 }
-
-//https://medium.com/geekculture/building-a-simple-colour-picker-in-react-from-scratch-8ef0d3f4e9cc
